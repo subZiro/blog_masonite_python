@@ -1,0 +1,7 @@
+2020-06-06 05:33:21 - ERROR - TemplateNotFound in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/BlogController.py on line 20
+2020-06-06 05:33:29 - ERROR - TemplateNotFound in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/BlogController.py on line 20
+2020-06-06 09:29:45 - ERROR - QueryException in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/auth/RegisterController.py on line 55
+2020-06-06 10:27:54 - ERROR - QueryException in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/BlogController.py on line 30
+2020-06-06 10:29:28 - ERROR - QueryException in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/BlogController.py on line 30
+2020-06-06 10:30:21 - ERROR - SyntaxError in /Users/Tseus/Development/Python/masonite_blog/blog/bootstrap/start.py on line 38
+2020-06-06 10:32:20 - ERROR - QueryException in /Users/Tseus/Development/Python/masonite_blog/blog/app/http/controllers/BlogController.py on line 31
