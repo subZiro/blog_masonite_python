@@ -1,0 +1,42 @@
+{% if exists('auth/base') %}
+    {% extends 'auth/base.html' %}
+{% else %}
+    {% extends 'base.html' %}
+{% endif %}
+
+{% block css %}
+<!-- Application CSS -->
+<link href="/static/css/blog.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block title %}
+    <!-- Title block -->
+    Publications {{ config('application.name', 'Masonite') }}
+{% endblock %}
+
+{% block content %}
+    <!-- Content block -->
+    {% if auth() %}
+        <form action="/post/{{ post.id }}/update" method="POST">
+            {{ csrf_field }}
+
+            <label for="">Title</label>
+            <input type="text" name="title" value="{{ post.title }}"><br>
+
+            <label>Body</label>
+            <textarea name="body">{{ post.body }}</textarea><br>
+
+            <input type="submit" value="Update">
+
+            <a href="/post/{{ post.id }}/delete"> Delete </a>
+        </form>
+    {% else %}
+        <a href="/login">Please Login</a>
+    {% endif %}
+
+    {% block js %}
+        <!-- Application JS -->
+        <script src="/static/js/script.js"></script>
+    {% endblock %}
+{% endblock %}

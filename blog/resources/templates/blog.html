@@ -1,0 +1,37 @@
+{% if exists('auth/base') %}
+    {% extends 'auth/base.html' %}
+{% else %}
+    {% extends 'base.html' %}
+{% endif %}
+
+{% block css %}
+<!-- Application CSS -->
+<link href="/static/css/blog.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block title %}
+    Blog {{ config('application.name', 'Masonite') }}
+{% endblock %}
+
+{% block content %}
+    {% if auth() %}
+    <form action="/blog/create" method="POST">
+        {{ csrf_field }}
+
+        <label> Title </label>
+        <input type="name" name="title"><br>
+
+        <label> Body </label>
+        <textarea name="body"></textarea>
+
+        <input type="submit" value="Post!">
+    </form>
+    {% else %}
+        <a href="/login">Please Login</a>
+    {% endif %}
+
+    {% block js %}
+        <script src="/static/js/script.js"></script>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% if exists('auth/base') %}
+    {% extends 'auth/base.html' %}
+{% else %}
+    {% extends 'base.html' %}
+{% endif %}
+
+{% block css %}
+<!-- Application CSS -->
+<link href="/static/css/blog.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block title %}
+    <!-- Title block -->
+    Publications {{ config('application.name', 'Masonite') }}
+{% endblock %}
+
+{% block content %}
+    <!-- Content block -->
+    {% if auth() %}
+        {{ post.title }} by {{ post.author.name }}
+        <br>
+        {{ post.image }}
+        <br>
+        {{ post.body }}
+        <hr>
+    {% else %}
+        <a href="/login">Please Login</a>
+    {% endif %}
+
+    {% block js %}
+        <!-- Application JS -->
+        <script src="/static/js/script.js"></script>
+    {% endblock %}
+{% endblock %}
